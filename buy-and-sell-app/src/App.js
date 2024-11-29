@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import ProtectedRoute from './routes/ProtectedRoute';
 import Register from './pages/Register';
 import ProductDetails from './pages/ProductDetails';
 import AddListing from './pages/AddListing';
@@ -16,7 +17,14 @@ function App() {
 		        <Router>
 		          <Header />
 		          <Routes>
-		            <Route path="/" element={<Home />} />
+		            <Route
+		            path="/"
+		            element={
+				    <ProtectedRoute>
+				    <Home />
+				    </ProtectedRoute>
+			    }
+		          />
 		            <Route path="/login" element={<Login />} />
 		            <Route path="/register" element={<Register />} />
 		            <Route path="/product/:id" element={<ProductDetails />} />
