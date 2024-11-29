@@ -1,0 +1,267 @@
+/* General Reset */
+
+*{
+       	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Arial', sans-serif;
+	line-height: 1.6;
+	color: #333;
+	background-color: #f8f9fa;
+}
+
+/* Header */
+header {
+	background-color: #2c3e50; /* Dark Blue */
+	padding: 20px;
+	color: #ecf0f1;
+	text-align: center;
+}
+
+header h1 {
+	font-size: 2.5rem;
+}
+
+header p {
+	font-size: 1.2rem;
+	margin-top: 5px;
+}
+
+/* Footer */
+footer {
+	background-color: #2c3e50;
+	color: #ecf0f1;
+	text-align: center;
+	padding: 10px 20px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+/* Home */
+.home-container {
+	padding: 20px;
+}
+
+.home-title {
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+
+.home-intro {
+	font-size: 1.2rem;
+	margin-bottom: 20px;
+	color: #555;
+}
+
+/* Add Listing */
+.add-listing-container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	background: #ffffff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.add-listing-container h2 {
+	margin-bottom: 20px;
+}
+
+.add-listing-container label {
+	font-weight: bold;
+}
+
+.add-listing-container input,
+.add-listing-container textarea,
+.add-listing-container select {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.add-listing-container button {
+	background-color: #3498db;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.add-listing-container button:hover {
+	background-color: #2980b9;
+}
+
+/* Login & Register */
+.auth-container {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	background: white;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.auth-container h2 {
+	margin-bottom: 20px;
+}
+
+.auth-container label {
+	font-weight: bold;
+}
+
+.auth-container input {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.auth-container button {
+	background-color: #2ecc71;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.auth-container button:hover {
+	background-color: #27ae60;
+}
+
+/* Product Details */
+.product-details-container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.product-details-container img {
+	width: 100%;
+	max-height: 400px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.product-details-container h2 {
+	font-size: 2rem;
+	margin: 15px 0;
+}
+
+.product-details-container p {
+	font-size: 1.1rem;
+	line-height: 1.5;
+	color: #555;
+}
+
+.product-details-container button {
+	background-color: #e74c3c;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+																					.product-details-container button:hover {
+																						background-color: #c0392b;
+																					}
+
+																					/* ErrorBoundary */
+																					.error-boundary {
+																						text-align: center;
+																						padding: 50px;
+																						color: #e74c3c;
+																					}
+
+																					.error-boundary h1 {
+																						font-size: 3rem;
+																						margin-bottom: 20px;
+																					}
+
+																					.error-boundary p {
+																						font-size: 1.2rem;
+																						margin-bottom: 10px;
+																					}
+
+																					/* ListingCard */
+
+																					.listing-card {
+																						border: 1px solid #ddd;
+																						border-radius: 5px;
+																						box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+																						margin: 10px;
+																						padding: 10px;
+																						transition: box-shadow 0.3s ease;
+																					}
+
+																					.listing-card:hover {
+																						box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+																					}
+
+																					.listing-card img {
+																						width: 100%;
+																						height: 200px;
+																						object-fit: cover;
+																						border-radius: 5px;
+																					}
+
+																					.listing-card h3 {
+																						margin: 10px 0;
+																					}
+
+																					.listing-card p {
+																						color: #555;
+																					}
+
+																					.listing-card button {
+																						background-color: #2ecc71;
+																						color: white;
+																						padding: 8px 12px;
+																						border: none;
+																						border-radius: 5px;
+																						cursor: pointer;
+																					}
+
+																					.listing-card button:hover {
+	background-color: #27ae60;
+																					}
+
+																					/* Search Bar */
+																					.search-bar {
+																						display: flex;
+																						justify-content: center;
+																						margin: 20px 0;
+																					}
+
+																					.search-bar input {
+																						width: 60%;
+																						padding: 10px;
+																						border: 1px solid #ddd;
+																						border-radius: 5px 0 0 5px;
+																						font-size: 1rem;
+																					}
+
+																					.search-bar button {
+																						background-color: #3498db;
+																						color: white;
+																						padding: 10px 20px;
+																						border: none;
+																						border-radius: 0 5px 5px 0;
+																						cursor: pointer;
+																					}
+
+																					.search-bar button:hover {
+																						background-color: #2980b9;
+																					}
