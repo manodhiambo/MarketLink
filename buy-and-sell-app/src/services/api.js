@@ -1,33 +1,25 @@
-const API_BASE_URL = 'http://localhost:5000/api';
-export const fetchListings = async () => {
-	  try {
-		      const response = await fetch(`${API_BASE_URL}/listings`);
-		  if (!response.ok) {
-			        throw new Error(`Error fetching listings: ${response.statusText}`);
-			      }
+import axios from 'axios';
 
-		      return await response.json();
-		    } catch (error) {
-			        console.error(error);
-			        throw new Error('Failed to fetch listings');
-			      }
+const api = axios.create({
+	  baseURL: 'http://localhost:5000/api',
+});
+
+export const registerUser = async (userData) => {
+	  const response = await api.post('/users/register', userData);
+	  return response.data;
 };
 
-export const addListing = async (data) => {
-	  try {
-		      const response = await fetch(`${API_BASE_URL}/listings`, {
-			            method: 'POST',
-			            headers: { 'Content-Type': 'application/json' },
-			            body: JSON.stringify(data),
-			          });
+export const loginUser = async (credentials) => {
+	  const response = await api.post('/users/login', credentials);
+	  return response.data;
+};
 
-		  if (!response.ok) {
-			        throw new Error(`Error adding listing: ${response.statusText}`);
-			      }
+export const fetchListings = async () => {
+	  const response = await api.get('/listings');
+	  return response.data;
+};
 
-		      return await response.json();
-		    } catch (error) {
-			        console.error(error);
-			        throw new Error('Failed to add listing');
-			      }
+export const addListing = async (listingData) => {
+	  const response = await api.post('/listings', listingData);
+	  return response.data;
 };

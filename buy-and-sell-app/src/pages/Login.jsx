@@ -2,36 +2,43 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../utils/api';
 
-
 function Login() {
 	  const [email, setEmail] = useState('');
 	  const [password, setPassword] = useState('');
 	  const [error, setError] = useState('');
 
 	  const navigate = useNavigate();
-	// Handle form submission
-	const handleSubmit = (e) => {
-		    e.preventDefault();
 
+	// Handle form submission
+	const handleSubmit = async (e) => {
+		    e.preventDefault();
+		
 		// Simple validation check
 		if (!email || !password) {
 			      setError('Please enter both email and password');
 			      return;
-			    }
+		}
 
-		 if (email === 'user@example.com' && password === 'password') {
-			  navigate('/');
+		// Check for hardcoded credentials
+		if (email === 'user@example.com' && password === 'password') {
+			      navigate('/');
+			      return;
+		}
 
-		 } else {
-			       setError('Invalid email or password');
-			     }
+		// Proceed with login request if no early returns
+		try {
+			      const response = await axios.post('/api/login', { email, password });
+			      localStorage.setItem('token', response.data.token);
+			      alert(response.data.message);
+			      navigate('/home');
+			    } catch (err) {
+				          setError(err.response?.data?.error || 'An error occurred. Please try again.');
+				        }
 		  };
 
 	  return (
 		      <div className="login-container">
-		        <h2>Login</h2>
-
-		        {/* Display error message if any */}
+		        <h2>Login</h2> {/* Display error message if any */}
 		        {error && <div className="error-message">{error}</div>}
 
 		        <form onSubmit={handleSubmit}>
@@ -68,4 +75,5 @@ function Login() {
 		      </div>
 		    );
 }
+
 export default Login;
